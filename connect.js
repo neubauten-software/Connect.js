@@ -18,6 +18,8 @@ function XMLParser(Url, Method) {
     for (var i = 0; i < parseable.length; i++) {
       text = parseable[i].innerHTML;
     }
+    
+    console.log(text);
   };
   
   xhr.open(Method, Url, true);
