@@ -2,29 +2,12 @@
  *
  *  @author        { Neubauten Software }
  *  @version       { 1.0 }
- *  
- *  @constructor   { XMLParser }
  *
 */
 
-function XMLParser(Url, Method) {
-  var xhr = new XMLHttpRequest();
+function Load(FileName) {
+  var Object = new XMLHttpRequest();
   
-  xhr.onload = function() {
-    var doc = this.responseXML,
-        parseable = doc.getElementsByTagName("text"),
-        text = "";
-    
-    for (var i = 0; i < parseable.length; i++) {
-      text = parseable[i].innerHTML;
-    }
-    
-    console.log(text);
-  };
-  
-  xhr.open(Method, Url, true);
-  xhr.responseType = "document";
-  xhr.send();
+  Object.open("GET", FileName, false);
+  Object.send();
 }
-
-XMLParser("my_first_xml.xml", "GET");
