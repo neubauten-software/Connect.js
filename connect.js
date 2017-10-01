@@ -10,8 +10,9 @@ function CONNECT() {
 }
 
 CONNECT.prototype.Init = function (XMLFileName, XSLTFileName) {
-  var XML = new CONNECT.Load(XMLFileName);
-  var XSLT = new CONNECT.Load(XSLTFileName);
+  var Core = new CONNECT();
+  var XML = Core.Load(XMLFileName);
+  var XSLT = Core.Load(XSLTFileName);
   
   var Processor = new XSLTProcessor();
   Processor.importStylesheet(XSLT);
